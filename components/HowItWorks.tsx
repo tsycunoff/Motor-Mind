@@ -76,12 +76,12 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="how-it-works" className="py-20 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden">
+    <section ref={sectionRef} id="how-it-works" className="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100/30 to-purple-100/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-green-100/30 to-blue-100/30 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-12">
           <div className={`inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200/50 rounded-full text-sm font-medium text-blue-700 mb-8 transition-all duration-700 transform ${
             isInView ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           }`}>
@@ -124,19 +124,15 @@ const HowItWorks: React.FC = () => {
               return (
                 <div 
                   key={step.id}
-                  className={`relative transition-all duration-700 transform ${
-                    isInView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-                  } ${isActive ? 'scale-105' : 'scale-100'}`}
+                  className={`relative transition-all duration-500 transform ${
+                    isInView ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                  } ${isActive ? 'scale-102' : 'scale-100'}`}
                   style={{ transitionDelay: `${300 + index * 200}ms` }}
                   onMouseEnter={() => setActiveStep(index)}
                 >
                   <div className={`bg-gradient-to-br ${step.bgColor} p-8 rounded-3xl border-2 ${step.borderColor} shadow-sm hover:shadow-xl transition-all duration-500 relative overflow-hidden group`}>
                     
-                    <div className="absolute inset-0 opacity-5">
-                      <div className="absolute inset-0" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                      }}></div>
-                    </div>
+
 
                     <div className="flex justify-center mb-6 relative">
                       <div className={`relative w-20 h-20 bg-white border-4 ${step.borderColor} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-500 ${
